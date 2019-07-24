@@ -1,0 +1,272 @@
+<br>
+<div class="container-fluid">
+    
+    <div class="container-fluid">
+      <!-- Control the column width, and how they should appear on different devices -->
+      <div class="row">
+        <div class="col-sm-2" >
+            <img src="img/starkcore.jpg" alt="stack core logo" width="100px"  height="90px" style="margin-left: 30px;"  >
+        </div>
+        <div class="col-sm-10" >
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 15px;background-color: #e3f2fd;">
+                <!-- <a class="navbar-brand" href="#">Navbar</a>-->
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+                 </button>
+               
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav mr-auto">
+                     <li class="nav-item active"  style="width: 200px;margin: 7px 1px 0px 55px;">
+                            <i class="fas fa-home" style="text-align: center;"><a class="nav-link" href="#!/view1">  Home <span class="sr-only">(current)</span></a></i> 
+                       
+                     </li>
+                     <li class="nav-item"  style="width: 200px;margin: 7px 1px 0px 55px;">
+                            <i class="far fa-envelope" style="text-align: center;">   <a class="nav-link" href="#!/view2">Messages</a></i>
+                    
+                     </li>
+                     <li class="nav-item "  style="width: 200px;margin: 7px 1px 0px 55px;">
+                            <i class="fas fa-star" style="text-align: center;"> <a class="nav-link" href="#!/view3">Wishlist</a></i>
+                        
+                     </li>
+                     <li class="nav-item"  style="width: 200px;margin: 7px 1px 0px 55px;">
+                            <i class="fas fa-cog" style="text-align: center;"> <a class="nav-link" href="#!/view4">Settings</a></i>
+                     
+                     </li>
+                     <li class="nav-item"  style="width: 200px;margin: 7px 1px 0px 55px;">
+                            <i class="fas fa-user"  style="text-align: center;" >  <a class="nav-link" href="#!/view5">My Account</a></i>
+                       
+                       </li>
+                   </ul>
+                   
+                 </div>
+             </nav>
+        
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-2" >
+                
+                <i class="far fa-lightbulb"> <span style="margin-left: 15px;">Smart Filters</span></i>
+                 <br>
+                 <br> 
+            <form>
+                   
+                <div class="custom-control custom-switch">
+                  <span  style="margin-right: 50px"><i class="fas fa-certificate"></i></span>
+                  <input type="checkbox" class="custom-control-input" id="switch1" ng-model="checkboxModel.s" >
+                  <label class="custom-control-label" for="switch1"></label>
+                </div>
+                <br>
+                <div class="custom-control custom-switch">
+                    <span  style="margin-right: 50px"><i class="fas fa-calendar"></i></span>
+                    <input type="checkbox" class="custom-control-input" id="switch2" ng-model="checkboxModel.c" >
+                    <label class="custom-control-label" for="switch2"></label>
+                  </div>
+                  <br>
+                  <div class="custom-control custom-switch">
+                        <span  style="margin-right: 50px"><i class="far fa-heart"></i></span>
+                    <input type="checkbox" class="custom-control-input" id="switch3" ng-model="checkboxModel.h" >
+                    <label class="custom-control-label" for="switch3"></label>
+                  </div>
+            </form>
+             <br>
+            <form class="form-inline my-2 my-lg-0">
+                    <i class="fas fa-search" style="margin-left: 10px;position: absolute;"></i>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="text-align: center;width: 90%;"  ng-model="searchText">
+                   
+            </form>
+            <br>
+            <br>
+            <button type="button" class="btn">DELIVERED</button>
+                 
+           
+        
+        </div>
+        <div class="col-sm-10" >
+
+
+                <div class="container-fluid">
+                        <!-- Control the column width, and how they should appear on different devices -->
+                        <div class="row">
+                          <div class="col-sm-2" >
+                                <!-- <div class="custom-control custom-radio custom-control-inline" style="margin-left: 10px">
+                                        <input type="radio" class="custom-control-input" >
+                                        <label class="custom-control-label" for="customRadio"></label>
+                            </div> -->
+                          </div>
+                          <div class="col-sm-5" ></div>
+                          <div class="col-sm-1" >
+                               
+                        </div>
+                          <div class="col-sm-4" >
+                                <form class="form-inline my-2 my-lg-0">
+                                        <i class="fas fa-search" style="margin-left: 10px;position: absolute;"></i>
+                                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="text-align: center;"  ng-model="searchText" >
+                                </form>
+                        </div>
+                        </div>
+                </div>        
+        
+                 <br>
+            <div class="container-fluid" ng-show="true">
+
+                <div class="table-details">
+        
+                    <div class="t-body" ng-repeat="dato in deliveries  | filter:searchText">
+
+                            
+                                <div >
+                                        <input 
+                                           type='radio'
+                                           name="selectedCheck"
+                                           ng-model="model.checkSeleccionado"
+                                           ng-value="dato"
+                                           ng-change="cambio()"
+                                           style="margin-top: 20px "
+                                            />
+                                </div>
+
+                        <div class="items">
+                            <p>{{dato.date}}</p>
+                        </div>
+                        <div class="items enbloque">
+                            <p>{{dato.origin}}</p>
+                            <i class="fas fa-chevron-down"></i>
+                            <p>{{dato.destination}}</p>
+                        </div>
+                        <div class="items medium">
+                           
+                        </div>
+                        <div class="items medium">
+                                <i class="fas fa-truck"></i>
+                            <p style="margin-left: 10px"> ${{dato.price }}</p>
+                        </div>
+                        <div class="items">
+                            <p  style="
+                            width: 30px;
+                            height: 25px;
+                            border: 1px solid red;
+                            border-radius: 5px;
+                            background-color: red;
+                            opacity:0.6;
+                            color:white;
+                            " ><strong>{{ dato.boxesNumber }}</strong></p>
+                        </div>
+                        <div class="items">
+                                <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <div class="items medium">
+                            <span ng-if="sale" style="margin-right: 50px"><i class="far fa-certificate"></i></span>
+                            <span ng-if="calendar"  style="margin-right: 50px"><i class="fas fa-calendar"></i></span>
+                            <span ng-if="heart"  style="margin-right: 50px"><i class="far fa-heart"></i></span>
+                      </div>
+
+                      <div class="items">
+                          <i ng-if="checkboxModel.s"class="fas fa-certificate"></i>
+                          <i ng-if="checkboxModel.c"class="fas fa-calendar"></i>
+                          <i ng-if="checkboxModel.h" class="far fa-heart"></i>
+                      </div>
+
+        
+                    </div>
+                     <br>
+                     <strong> selected : {{model.checkSeleccionado| json}} </strong>
+        
+                </div>
+        
+            </div>
+        
+        
+        
+        </div>
+      </div>
+      
+
+      <br>
+  
+    
+    
+
+    </div>
+  </div>
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+  
+
+  
+   
+    <!-- <div class="container-fluid" ng-show="show &amp;&amp; !media">
+
+        <div class="table-details" ng-repeat="dato in datosAMostrar">
+
+                <div class="t-head bg-sura">
+
+                        <div class="items">
+                            <p>{{dato.Proveedor}}</p>
+                        </div>
+        
+                         <div class="items">
+                                <md-button class="md-fab md-primary">
+                                        <md-tooltip md-direction="top">
+                                                {{obtenerEmail(dato.Email)}}
+                                        </md-tooltip>
+                                        <i class="far fa-envelope"></i>
+                               </md-button>
+                         
+                        </div>
+        
+                        <div class="items ">
+                                <md-button class="md-fab md-primary">
+                                        <md-tooltip md-direction="top">
+                                                {{dato.Telefono}}
+                                        </md-tooltip>
+                                        <i class="fas fa-phone"></i>
+                                </md-button>
+                        </div>             
+        
+                </div>
+      
+
+            <div class="t-body">
+              
+                <div class="items">
+                    <p class="blue"><strong>Dirección</strong></p>
+                    <p>{{dato.Direccion}}</p>
+                </div>
+             
+                <div class="items">
+                        <p class="blue"><strong>Contacto</strong></p>
+                    <p>{{dato.Contacto}}</p>
+                </div>
+               
+
+            </div>
+
+            <div class="t-body">
+              
+                    <div class="items">
+                        <p>{{ obtenerServicio(dato.Servicios) }}</p>
+                    </div>
+    
+            </div>
+            <br>
+
+
+
+        </div>
+
+    </div> -->
+
+
+

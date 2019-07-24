@@ -1,0 +1,219 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+
+/*   Exams Styles   */
+    .dirExam .form .form-group {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .dirExam .form .form-group .sel-title {
+        color: #00aec7;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        position: absolute;
+        top: -10px;
+        background-color: #ffffff;
+        padding: 1px 4px;
+        left: 10px;
+    }
+
+    .dirExam .form .form-group select {
+
+        border: 1px solid #DDDDDD;
+        height: 50px;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .dirExam .form .form-group.error .sel-title {
+        color: #ff6d6d;
+    }
+
+    .dirExam .form .form-group.error select {
+        border-color: #ff6d6d;
+    }
+
+    .dirExam .form .form-group.success select {
+        border-color: #00aec7;
+    }
+
+    .dirExam .form .form-group.error p {
+        opacity: 1;
+    }
+
+    .dirExam .form .form-group.error p.surablue {
+        opacity: 1;
+    }
+
+    .dirExam .form .form-group p {
+        opacity: 0;
+        -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        position: absolute;
+        bottom: -15px;
+        font-size: 12px;
+        color: #ff6d6d;
+    }
+
+    /*
+       new styles
+       */
+
+    .bg-sura {
+        background: #0033A0;
+    }
+
+    .table-details .t-head,
+    .table-details .t-body {
+        display: flex;
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    .table-details .t-head .items,
+    .table-details .t-body .items {
+        width: 100%;
+        text-align: center;
+        border-right: rgba(255, 255, 255, 0.2) solid 1px;
+        font-size: 12px;
+    }
+
+    .table-details .t-head .items:last-child,
+    .table-details .t-body .items:last-child {
+        border: none;
+    }
+
+    .table-details .t-head .items p,
+    .table-details .t-body .items p {
+        color: #fff;
+        margin: 5px 0px;
+        font-weight: bold;
+    }
+
+    .table-details .t-head .items .icon svg,
+    .table-details .t-body .items .icon svg {
+        fill: #e3e829;
+        width: 16px;
+        height: 14px;
+        vertical-align: bottom;
+    }
+
+    .table-details .t-body {
+        background: #ededed;
+        border: #ededed solid 1px;
+        margin-top: 8px;
+    }
+
+    .table-details .t-body .items {
+        background: #ededed;
+        border-right-color: #fff;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .enbloque{
+        flex-direction: column;
+    }
+    
+
+
+
+    .table-details .t-body .items p {
+        color: #8a8a8a;
+        font-weight: normal;
+        margin: 0;
+        word-break: break-word;
+    }
+
+    p.blue {
+        color: #0033A0 !important;
+    }
+
+    .medium {
+        width: 50% !important;
+    }
+  
+    .table-details .t-body .items p.status {
+        padding: 10px;
+        color: #fff;
+        display: inline-block;
+        max-width: 70px;
+        border-radius: 20px;
+    }
+
+    .table-details .t-body .items p.status.sts-exped {
+        background: #62ba46;
+    }
+
+    .table-details .t-body .items p.status.sts-process {
+        background: #00aec7;
+    }
+
+    .table-details .t-body .items p.status.sts-decline {
+        background: #f80;
+    }
+
+    .table-details .t-body .items p.status.sts-pendient {
+        background: #ee533f;
+    }
+
+
+@media (min-width: 992px){
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+}
+
+
+    @media (min-width: 992px){
+        .flex-container > .tres {
+        width: 25%;
+        padding: 10px;
+        }
+    }
+
+    .flex-container > .seis {
+      width: 50%;
+    }
+
+    .flex-container > .doce {
+      width: 100%;
+    }
+
+    .flex-container-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
